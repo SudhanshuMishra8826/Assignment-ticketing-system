@@ -59,7 +59,7 @@ export default function Card() {
                 }} value={String(ticket?.status)} onChange={(e) => { handleChange(e.target.value) }}>
                     <option value="0">Open</option>
                     <option value="1">In Progress</option>
-                    <option value="2">Closed</option>
+                    <option value="2">Code Review</option>
                 </select>
             </div >
         </>
