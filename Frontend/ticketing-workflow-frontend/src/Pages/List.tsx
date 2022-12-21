@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { Ticket } from '../types/tickets';
 
 export default function List() {
-    const [tickets, setTickets] = useState([])
+    const [tickets, setTickets] = useState<Ticket[]>([])
 
     useEffect(() => {
         axios.get(`http://127.0.0.1:8000`).then((res: any) => {

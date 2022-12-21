@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import mysql, { Connection, MysqlError } from 'mysql';
+import { Ticket } from './types/ticket';
 const cors = require("cors");
 
 const connection: Connection = mysql.createConnection({
@@ -19,7 +20,7 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(cors())
 app.get('/', (req: Request, res: Response) => {
-    connection.query("SELECT * FROM tickets", (err: MysqlError | null, result: any) => {
+    connection.query("SELECT id, title, status FROM tickets", (err: MysqlError | null, result: Ticket[]) => {
         if (err) {
           console.error(err)
     
@@ -34,7 +35,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/:id', (req: Request, res: Response) => {
   req.body.id = Number(req.params.id)
-  connection.query("SELECT * FROM tickets WHERE id = ?",[req.body.id], (err: MysqlError | null, result: any) => {
+  connection.query("SELECT id, title, status FROM tickets WHERE id = ?",[req.body.id], (err: MysqlError | null, result: Ticket[]) => {
       
     if (err) {
         console.error(err)

@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
+import { Ticket } from '../types/tickets';
+import { UpdateTicketPayload } from '../types/UpdateTicketPayload';
 
 export default function Card() {
     const { ticketId } = useParams()
-    const [ticket, setTicket]: any = useState()
+    const [ticket, setTicket] = useState<Ticket>()
     useEffect(() => {
         updateTicket()
     }, [])
@@ -18,12 +20,14 @@ export default function Card() {
         })
     }
 
-    const handleChange: any = (value: any) => {
+    const handleChange: any = (value: string) => {
         if (!checkValidOperation().includes(Number(value))) {
             alert('Invalid Operation')
             return
         }
-        axios.post(`http://localhost:8000/${ticketId}`, { status: value }).then((res: any) => {
+        const params: UpdateTicketPayload = { status: value }
+
+        axios.post(`http://localhost:8000/${ticketId}`, params).then((res: any) => {
             updateTicket()
         }).catch((err: any) => {
             console.log(err)

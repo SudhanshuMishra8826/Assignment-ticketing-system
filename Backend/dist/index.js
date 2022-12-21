@@ -20,7 +20,7 @@ const port = process.env.PORT;
 app.use(express_1.default.json());
 app.use(cors());
 app.get('/', (req, res) => {
-    connection.query("SELECT * FROM tickets", (err, result) => {
+    connection.query("SELECT id, title, status FROM tickets", (err, result) => {
         if (err) {
             console.error(err);
             res.status(500).end();
@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 });
 app.get('/:id', (req, res) => {
     req.body.id = Number(req.params.id);
-    connection.query("SELECT * FROM tickets WHERE id = ?", [req.body.id], (err, result) => {
+    connection.query("SELECT id, title, status FROM tickets WHERE id = ?", [req.body.id], (err, result) => {
         if (err) {
             console.error(err);
             res.status(500).end();
