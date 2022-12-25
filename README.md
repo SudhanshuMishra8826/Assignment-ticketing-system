@@ -90,56 +90,8 @@
 
 ## Screenshots
 
-### 1. List of all the tickets
-
-[Image: /Screenshots/Tickets List Frontend.png]
-
-image1920×1080 112 KB
-
-### 2. Details of the ticket
-
-[Image: /Screenshots/Ticket Details Frontend.png]
-
-image1920×1080 112 KB
-
-### 3. Update the status of the ticket
-
-[Image: /Screenshots/Ticket Details Frontend.png]
-
-image1920×1080 112 KB
-
-### 4. Error message when the ticket receives an Invalid Update Request
-
-[Image: /Screenshots/Invalid Ticket Update Frontend.png]
-
-image1920×1080 112 KB
-
-### 5. Thunderclient screenshot for the API Endpoints
-
-[Image: /Screenshots/Get Ticket Detail API -  Thundercliet.png]
-
-image1920×1080 112 KB
-
-
-[Image: /Screenshots/Get Ticket List API -  Thundercliet.png]
-
-image1920×1080 112 KB
-
-
-[Image: /Screenshots/Update Ticket Detail API -  Thundercliet.png]
-
-image1920×1080 112 KB
-
-### 6. Database Schema
-
-[Image: /Screenshots/Ticket-table-entries.png]
-
-image1920×1080 112 KB
-
-[Image: /Screenshots/Ticket-table-Schema.png]
-
-image1920×1080 112 KB
-
+    All the screen shots are in the Screenshots Folder 
+    
 
 
 
