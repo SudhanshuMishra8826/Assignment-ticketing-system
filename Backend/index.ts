@@ -3,16 +3,18 @@ import dotenv from 'dotenv';
 import mysql, { Connection, MysqlError } from 'mysql';
 import { Ticket } from './types/ticket';
 const cors = require("cors");
-
-const connection: Connection = mysql.createConnection({
-  host     : 'localhost',
-  port : 6033,
-  user     : 'db_user',
-  password : 'db_user_pass',
-  database : 'app_db'
-});
-
 dotenv.config();
+
+
+const db_config ={
+    host     : process.env.DB_HOST || 'localhost',
+    port : Number(process.env.DB_PORT)||6033,
+    user     : process.env.DB_USER||'db_user',
+    password : process.env.DB_PASSWORD||'db_user_pass',
+    database : process.env.DB||'app_db'
+  }
+const connection: Connection = mysql.createConnection(db_config);
+
 
 const app: Express = express();
 const port = process.env.PORT;

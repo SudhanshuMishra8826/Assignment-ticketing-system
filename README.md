@@ -9,34 +9,34 @@
 
 ### 2. Create a database
 
-    1. Create a database
+    1. Create a database ( You can use the docker-compose file to create the database too)
     2. Create a tables as in the file `tickets.sql` or directly import the file
 
 ### 3. Configure the backend
 
     1. Move to Backend folder
-    2. Create a file `.env` and copy the content of `.env.example` to it
-    3. Change the values of the variables in the `.env` file
+    2. Change the values of the variables in the `.env` file if required
 
 ### 4. Run the backend
     
     1. Move to Backend folder
     2. Run `npm start`
+    3. The backend will start running on port 8000
 
 ### 5. Run the frontend
     
     1. Move to Frontend folder
-    2. Run `npm start`
+    2. Run `npm run dev`
 
 ### 6. Open the application
         
-    1. Open the browser and go to `http://localhost:3000`
+    1. Open the browser and go to `http://localhost:5173/ or on the url coming in your console`
 
 ## Notes
 
     1. The backend is running on port 8000
-    2. The frontend is running on port 3000
-    3. The database is running on port 3306
+    2. The frontend is running on port 5173
+    3. The database is running on port 6033
 
 ## Author
     
@@ -76,7 +76,7 @@
         2. types: Contains the types used in the frontend
         3. main.tsx: acting as our entry point for the application has all the routes
 
-    3. The frontend is running on port 3000
+    3. The frontend is running on port 5173
 
     4. Libraries used
         1. react: Used for creating the frontend
